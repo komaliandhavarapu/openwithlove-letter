@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenWithLove</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}body{font-family:Georgia,serif;color:#fff;background:#10162f}
+.page{height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,#3a1f4e 0,transparent 28%),radial-gradient(circle at 80% 80%,#28205a 0,transparent 30%),linear-gradient(135deg,#10162f,#171d42)}
+.page:before{content:"";position:absolute;inset:-30%;background-image:radial-gradient(circle,rgba(255,255,255,.35) 0 1px,transparent 1.5px);background-size:90px 90px;animation:drift 22s linear infinite}
+@keyframes drift{to{transform:translate(-70px,-50px)}}
+.wrap{position:relative;z-index:2;text-align:center;width:min(92vw,560px)}.brand{font:11px Arial;letter-spacing:4px;opacity:.6;margin-bottom:22px}
+.intro{font-size:clamp(21px,4vw,29px);line-height:1.4;min-height:75px;transition:.6s}.tap{font:11px Arial;letter-spacing:2px;opacity:.6;margin-top:10px}
+.area{height:330px;display:flex;align-items:center;justify-content:center}
+.envelope{width:min(78vw,350px);height:215px;position:relative;cursor:pointer;filter:drop-shadow(0 20px 35px #0008);transition:.8s}
+.body{position:absolute;inset:0;background:#faf3e9;border-radius:10px}.left,.right{position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:3}
+.left{left:0;border-width:107px 175px 0 0;border-color:#e6d5c2 transparent transparent}.right{right:0;border-width:0 175px 107px 0;border-color:transparent #d9c4ae transparent}
+.flap{position:absolute;left:0;top:0;width:0;height:0;border-style:solid;border-width:107px 175px 0;border-color:#fff8ef transparent transparent;transform-origin:top;transition:1s;z-index:5}
+.seal{position:absolute;left:50%;top:91px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:linear-gradient(145deg,#ff8abf,#ff5fa2);box-shadow:0 0 25px #ff5fa288;z-index:7;display:flex;align-items:center;justify-content:center}
+.letter{position:absolute;left:7%;right:7%;bottom:18px;height:205px;background:#fffaf0;color:#392e32;padding:30px 24px;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 12px 25px #0003;transition:1s}
+.letter:before{content:"";position:absolute;inset:10px;border:1px solid #825b4528}.lt{font-size:18px;text-align:center;font-style:italic;margin-bottom:14px;position:relative;z-index:2}.txt{text-align:center;font-size:15px;line-height:1.6;position:relative;z-index:2;max-width:300px}
+.open .flap{transform:rotateX(180deg);z-index:1}.open .seal{opacity:0}.open .letter{transform:translateY(-145px);z-index:8}.open .envelope{transform:translateY(20px)}
+.final{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:1s;background:#10162fee}
+.final.show{opacity:1;pointer-events:auto}.card{width:min(90vw,510px);padding:40px 28px;text-align:center;border-radius:28px;background:#ffffff0d;border:1px solid #ffffff22;backdrop-filter:blur(15px)}
+.card .heart{font-size:44px}.card h1{font-size:34px;margin:10px}.card p{font-size:16px;line-height:1.7;opacity:.82}.replay{display:inline-block;margin-top:15px;padding:11px 24px;border-radius:30px;background:linear-gradient(90deg,#7c4dff,#ff5fa2);color:#fff;text-decoration:none;font:600 13px Arial}
+.fade{opacity:0!important;pointer-events:none}
+@media(max-width:600px){
+      .area{height:310px}
+      .envelope{transform:scale(.92)}
+      .open .letter{transform:translateY(-125px);z-index:8}.open .flap{z-index:1}
+      .letter{height:190px;padding:24px 18px;z-index:2}
+      .txt{font-size:14px;line-height:1.55}
+      .lt{font-size:17px}
+    }
+</style></head><body><div class="page"><div class="wrap" id="wrap"><div class="brand">OPENWITHLOVE</div>
+<div class="intro" id="intro">There’s a little letter waiting for you…</div><div class="area"><div class="envelope" id="env">
+<div class="body"></div><div class="letter"><div class="lt">A little note for you ✨</div><div class="txt">Want this beautiful design for your own special surprise?<br><br><strong>DM us to get this design. 💌</strong></div></div>
+<div class="flap"></div><div class="left"></div><div class="right"></div><div class="seal">♥</div></div></div>
+<div class="tap" id="tap">TAP THE LETTER TO OPEN</div></div>
+<div class="final" id="final"><div class="card"><div class="heart">💌</div><h1>Want this design?</h1><p>Turn a simple link into a beautiful little moment.<br><br><strong>DM OpenWithLove to get this design. ✨</strong></p><a class="replay" href="">↻ Replay</a><div style="margin-top:20px;font:10px Arial;letter-spacing:2px;opacity:.45">OPEN A MOMENT. FEEL THE LOVE.</div></div></div></div>
+<script>
+const e=document.getElementById('env'),w=document.getElementById('wrap'),i=document.getElementById('intro'),t=document.getElementById('tap'),f=document.getElementById('final');
+setTimeout(()=>i.textContent='A tiny message, wrapped just for you…',1700);
+e.onclick=()=>{if(e.classList.contains('open'))return;e.classList.add('open');i.textContent='Open it gently…';t.textContent='';setTimeout(()=>{w.classList.add('fade');setTimeout(()=>f.classList.add('show'),900)},4800)};
+</script></body></html>
